@@ -9,7 +9,7 @@ package com.codekul.othergradle.exception;
  *
  * @author aniruddha
  */
-public class MyException extends Exception {
+public class MyException extends /*Exception // checked exceptions*/ RuntimeException /*//unchecked exceptions*/{
 
     @Override
     public String getMessage() {

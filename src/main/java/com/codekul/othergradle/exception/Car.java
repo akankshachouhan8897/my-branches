@@ -21,7 +21,7 @@ public class Car {
         System.out.println("Speed is - " + speed);
     }
 
-    public void deviate(double angle) throws Exception {
+    public void deviate(double angle) throws MyException {
 
         /*try {
             if(angle > 100) throw new MyException();
@@ -34,5 +34,4 @@ public class Car {
 
         System.out.println("Angle is " + angle);
     }
-
 }
