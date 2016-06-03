@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-
 public class MainActivity extends Activity {
+
+    public static final int ID_BTN_OKAY = 12345;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,11 @@ public class MainActivity extends Activity {
                         ViewGroup.LayoutParams.WRAP_CONTENT));
         layoutRoot.addView(edtName);
 
+        final Click click = new Click(edtName);
+
         Button btnOkay = new Button(this);
+        btnOkay.setId(ID_BTN_OKAY);
+        btnOkay.setOnClickListener(click);
         btnOkay.setText("Okay");
         btnOkay.setLayoutParams(
                 new ViewGroup.LayoutParams(
@@ -45,11 +49,22 @@ public class MainActivity extends Activity {
         setContentView(layoutRoot);
     }
 
-    private class Click implements View.OnHoverListener{
+    public class Click implements View.OnClickListener{
+
+        private final EditText edtName;
+
+        public Click(final EditText edtName){
+            this.edtName = edtName;
+        }
 
         @Override
-        public boolean onHover(View v, MotionEvent event) {
-            return false;
+        public void onClick(View v) {
+
+            if(v.getId() == ID_BTN_OKAY){
+
+                String name = edtName.getText().toString();
+                edtName.setText(name.toUpperCase());
+            }
         }
     }
 }
