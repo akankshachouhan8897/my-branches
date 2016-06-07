@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="User Name"
-        android:layout_marginLeft="30px"/>
+        android:layout_marginLeft="20dp"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -22,7 +22,8 @@
             android:id="@+id/btnUpper"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Upper"/>
+            android:text="Upper"
+            android:textSize="20sp"/>
         <Button
             android:id="@+id/btnLower"
             android:layout_width="wrap_content"

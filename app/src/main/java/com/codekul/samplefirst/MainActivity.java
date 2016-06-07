@@ -8,6 +8,10 @@ import android.widget.EditText;
 
 public class MainActivity extends Activity {
 
+
+    // dp = px * 160 / dpi
+    // px = (dp * dpi) / 160
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
