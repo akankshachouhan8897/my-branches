@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btnToast).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
                createNormalToast();
             }
         });
@@ -32,8 +31,15 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btnStatusBar).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
                 notificationWithActions();
+            }
+        });
+
+        findViewById(R.id.btnDialog).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+               createCustomDialog();
             }
         });
     }
@@ -173,5 +179,42 @@ public class MainActivity extends AppCompatActivity {
         NotificationManager manager =
                 (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         manager.notify(ID_NOTIFICATION_COMPACT,notification);
+    }
+
+    private final void createAlertDialog(){
+
+        MyDialogFragment dialogFragment =
+                new MyDialogFragment();
+        dialogFragment.show(getSupportFragmentManager(), MyDialogFragment.TAG_ALERT);
+
+    }
+
+    private final void createDatePickerDialog(){
+
+        MyDialogFragment dialogFragment =
+                new MyDialogFragment();
+        dialogFragment.show(getSupportFragmentManager(), MyDialogFragment.TAG_DATE_PICKER);
+
+    }
+
+    private final void createTimePickerDialog(){
+
+        MyDialogFragment dialogFragment =
+                new MyDialogFragment();
+        dialogFragment.show(getSupportFragmentManager(), MyDialogFragment.TAG_TIME_PICKER);
+    }
+
+    private final void createProgressDialog(){
+
+        MyDialogFragment dialogFragment =
+                new MyDialogFragment();
+        dialogFragment.show(getSupportFragmentManager(), MyDialogFragment.TAG_PROGRESS);
+    }
+
+    private final void createCustomDialog(){
+
+        MyDialogFragment dialogFragment =
+                new MyDialogFragment();
+        dialogFragment.show(getSupportFragmentManager(), MyDialogFragment.TAG_CUSTOM);
     }
 }
