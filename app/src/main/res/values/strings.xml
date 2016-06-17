@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">AssetsAndResources</string>
+    <string name="helloWorld">Hello World !</string>
+
+    <dimen name="textWidth">300dp</dimen>
+
+    <string name="edtHint">User Name</string>
+
+    <string-array name="arrCities">
+        <item>Pune</item>
+        <item>Kolhapur</item>
+        <item>Sangli</item>
+    </string-array>
+</resources>
