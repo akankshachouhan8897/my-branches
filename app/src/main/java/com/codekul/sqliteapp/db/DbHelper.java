@@ -1,4 +1,4 @@
-package com.codekul.sqliteapp;
+package com.codekul.sqliteapp.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

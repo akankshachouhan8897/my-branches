@@ -1,11 +1,12 @@
 package com.codekul.sqliteapp;
 
-import android.content.ContentValues;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import com.codekul.sqliteapp.db.DbHelper;
+import com.codekul.sqliteapp.db.DbRepository;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,12 +18,15 @@ public class MainActivity extends AppCompatActivity {
         final DbHelper helper =
                 new DbHelper(this,"userDb",null/*use default cursor factory*/,1);
 
+        final DbRepository repository =
+                new DbRepository(helper);
+
         findViewById(R.id.btnInsert)
                 .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                insert(helper,getName(),getPhone());
+                repository.insert(getName(),getPhone());
             }
         });
 
@@ -31,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
+                        repository.update(getName(),getPhone());
                     }
                 });
 
@@ -47,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
+                        repository.display(getPhone());
                     }
                 });
     }
@@ -61,19 +67,5 @@ public class MainActivity extends AppCompatActivity {
         return ((EditText)findViewById(R.id.edtMobile))
                 .getText()
                 .toString();
-    }
-
-    private void insert(DbHelper helper, String name, String phone){
-
-        SQLiteDatabase sqDb =
-                helper.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put("userName",name);
-        values.put("userPhone",phone);
-
-        sqDb.insert("profile",null/*i will not accept empty row*/,values);
-
-        sqDb.close();
     }
 }
