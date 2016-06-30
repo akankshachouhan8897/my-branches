@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.codekul.materialdesign.MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_call"
+        android:orderInCategory="101"
+        android:title="@string/actionCall"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_sms"
+        android:orderInCategory="102"
+        android:title="@string/actionSms"
+        app:showAsAction="never"
+        android:icon="@mipmap/ic_launcher"/>
+
+    <item
+        android:id="@+id/action_mms"
+        android:orderInCategory="102"
+        android:icon="@mipmap/ic_launcher"
+        android:title="@string/actionMms"
+        app:showAsAction="ifRoom" />
+</menu>

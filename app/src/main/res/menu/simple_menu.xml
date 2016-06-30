@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.codekul.materialdesign.MainActivity">
+    <item
+        android:id="@+id/actionDocomo"
+        android:orderInCategory="100"
+        android:title="@string/actionDocomo"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/actionTata"
+        android:orderInCategory="101"
+        android:title="@string/actionTata"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/actionAircel"
+        android:orderInCategory="102"
+        android:title="@string/actionAircel"
+        app:showAsAction="never"
+        android:icon="@mipmap/ic_launcher"/>
+
+</menu>

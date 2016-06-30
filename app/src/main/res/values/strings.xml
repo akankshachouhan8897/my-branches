@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MaterialDesign</string>
+    <string name="action_settings">Settings</string>
+    <string name="actionCall">Call</string>
+    <string name="actionSms">Sms</string>
+    <string name="actionMms">Mms</string>
+    <string name="actionDocomo">Docomo</string>
+    <string name="actionTata">Tata</string>
+    <string name="actionAircel">Aircel</string>
+</resources>
