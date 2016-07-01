@@ -10,18 +10,22 @@
     tools:context="com.codekul.webservices.MainActivity"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
+    <EditText
+        android:id="@+id/edtPostId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:textSize="30sp"
-        android:gravity="center"/>
+        android:hint="Post Id"
+        />
 
     <Button
         android:id="@+id/btnOkay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Okay"/>
+
+    <TextView
+        android:id="@+id/textPost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
