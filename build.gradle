@@ -1,26 +1,23 @@
-plugins {
-    id 'java'
-    id 'application'
-}
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
 
-sourceCompatibility = '1.8'
-[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
-
-mainClassName = 'com.codekul.othergradle.Java'
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    compile 'commons-lang:commons-lang:2.6'
-    testCompile group: 'junit', name: 'junit', version: '4.10'
-}
-
-jar {
-    version = "1.0"
-    name = "25th-may-2016-RELEASE"
-    manifest {
-        attributes 'Main-Class': 'com.codekul.firstgradle.Main'
+buildscript {
+    repositories {
+        jcenter()
     }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.0.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
